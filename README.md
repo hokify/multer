@@ -29,7 +29,7 @@ This README is also available in other languages:
 ## Installation
 
 ```sh
-$ npm install --save multer
+$ npm install --save @hokify/multer
 ```
 
 ## Usage
@@ -48,7 +48,7 @@ Don't forget the `enctype="multipart/form-data"` in your form.
 
 ```javascript
 var express = require('express')
-var multer  = require('multer')
+var multer  = require('@hokify/multer')
 var upload = multer({ dest: 'uploads/' })
 
 var app = express()
@@ -80,7 +80,7 @@ In case you need to handle a text-only multipart form, you should use the `.none
 ```javascript
 var express = require('express')
 var app = express()
-var multer  = require('multer')
+var multer  = require('@hokify/multer')
 var upload = multer()
 
 app.post('/profile', upload.none(), function (req, res, next) {
@@ -287,7 +287,7 @@ If you want to catch errors specifically from Multer, you can call the
 middleware function by yourself. Also, if you want to catch only [the Multer errors](https://github.com/expressjs/multer/blob/master/lib/multer-error.js), you can use the `MulterError` class that is attached to the `multer` object itself (e.g. `err instanceof multer.MulterError`).
 
 ```javascript
-var multer = require('multer')
+var multer = require('@hokify/multer')
 var upload = multer().single('avatar')
 
 app.post('/profile', function (req, res) {
