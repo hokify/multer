@@ -24,7 +24,7 @@ describe('Fields', function () {
 
     util.submitForm(parser, form, function (err, req) {
       assert.ifError(err)
-      assert.deepEqual(req.body, {
+      assert.deepStrictEqual(req.body, {
         name: 'Multer',
         key: 'value',
         abc: 'xyz'
@@ -48,7 +48,7 @@ describe('Fields', function () {
 
     util.submitForm(parser, form, function (err, req) {
       assert.ifError(err)
-      assert.deepEqual(req.body, {
+      assert.deepStrictEqual(req.body, {
         name: 'Multer',
         key: '',
         abc: '',
@@ -72,8 +72,8 @@ describe('Fields', function () {
 
     parser(req, null, function (err) {
       assert.ifError(err)
-      assert.equal(req.hasOwnProperty('body'), false)
-      assert.equal(req.hasOwnProperty('files'), false)
+      assert.strictEqual(req.hasOwnProperty('body'), false)
+      assert.strictEqual(req.hasOwnProperty('files'), false)
       done()
     })
   })
@@ -90,8 +90,8 @@ describe('Fields', function () {
 
     parser(req, null, function (err) {
       assert.ifError(err)
-      assert.equal(req.hasOwnProperty('body'), false)
-      assert.equal(req.hasOwnProperty('files'), false)
+      assert.strictEqual(req.hasOwnProperty('body'), false)
+      assert.strictEqual(req.hasOwnProperty('files'), false)
       done()
     })
   })
@@ -106,7 +106,7 @@ describe('Fields', function () {
 
       util.submitForm(parser, form, function (err, req) {
         assert.ifError(err)
-        assert.deepEqual(req.body, test.expected)
+        assert.deepStrictEqual(req.body, test.expected)
         done()
       })
     })
@@ -121,7 +121,7 @@ describe('Fields', function () {
 
     util.submitForm(parser, form, function (err, req) {
       assert.ifError(err)
-      assert.deepEqual(req.body, {
+      assert.deepStrictEqual(req.body, {
         obj: {
           '0': 'a',
           '2': 'c',

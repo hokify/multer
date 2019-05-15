@@ -23,11 +23,11 @@ function generateForm () {
 function assertSet (files, setName, fileNames) {
   var len = fileNames.length
 
-  assert.equal(files.length, len)
+  assert.strictEqual(files.length, len)
 
   for (var i = 0; i < len; i++) {
-    assert.equal(files[i].fieldname, setName)
-    assert.equal(files[i].originalname, fileNames[i])
+    assert.strictEqual(files[i].fieldname, setName)
+    assert.strictEqual(files[i].originalname, fileNames[i])
   }
 }
 
@@ -49,16 +49,16 @@ describe('Select Field', function () {
       var file
 
       file = req.files['CA$|-|'][0]
-      assert.equal(file.fieldname, 'CA$|-|')
-      assert.equal(file.originalname, 'empty.dat')
+      assert.strictEqual(file.fieldname, 'CA$|-|')
+      assert.strictEqual(file.originalname, 'empty.dat')
 
       file = req.files['set-1'][0]
-      assert.equal(file.fieldname, 'set-1')
-      assert.equal(file.originalname, 'tiny0.dat')
+      assert.strictEqual(file.fieldname, 'set-1')
+      assert.strictEqual(file.originalname, 'tiny0.dat')
 
       file = req.files['set-2'][0]
-      assert.equal(file.fieldname, 'set-2')
-      assert.equal(file.originalname, 'tiny1.dat')
+      assert.strictEqual(file.fieldname, 'set-2')
+      assert.strictEqual(file.originalname, 'tiny1.dat')
 
       done()
     })
