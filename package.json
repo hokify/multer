@@ -1,14 +1,14 @@
 {
   "name": "@hokify/multer",
   "description": "Middleware for handling `multipart/form-data`.",
-  "version": "1.5.0",
+  "version": "1.5.1",
   "contributors": [
     "Hage Yaapa <captain@hacksparrow.com> (http://www.hacksparrow.com)",
     "Jaret Pfluger <https://github.com/jpfluger>",
     "Linus Unnebäck <linus@folkdatorn.se>"
   ],
   "license": "MIT",
-  "repository": "expressjs/multer",
+  "repository": "@hokify/multer",
   "keywords": [
     "form",
     "post",
