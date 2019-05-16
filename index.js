@@ -19,6 +19,7 @@ function Multer (options) {
 
   this.limits = options.limits
   this.preservePath = options.preservePath
+  this.parseBlobs = options.parseBlobs
   this.fileFilter = options.fileFilter || allowAll
 }
 
@@ -46,6 +47,7 @@ Multer.prototype._makeMiddleware = function (fields, fileStrategy) {
 
     return {
       limits: this.limits,
+      parseBlobs: this.parseBlobs,
       preservePath: this.preservePath,
       storage: this.storage,
       fileFilter: wrappedFileFilter,
@@ -79,7 +81,8 @@ Multer.prototype.any = function () {
       preservePath: this.preservePath,
       storage: this.storage,
       fileFilter: this.fileFilter,
-      fileStrategy: 'ARRAY'
+      fileStrategy: 'ARRAY',
+      parseBlobs: this.parseBlobs
     }
   }
 
